@@ -30,7 +30,7 @@
 		
 	<div>
 		<video id="video" autoplay loop style="display:none">
-			<source src="http://storage.googleapis.com/streaming-video-360/wingsuit.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+			<source src="/videos/wingsuit.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
 		</video>
 	</div>
 </body>
