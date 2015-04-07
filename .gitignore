@@ -13,3 +13,4 @@ hs_err_pid*
 .classpath
 .project
 gae/test-video-360/test-video-360/.settings
+*.mp4
