@@ -9,12 +9,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<script>
-		var TripStepModel = ${tsjson};
-		console.log(TripStepModel);
-		var SC_WIDGET;
-	</script>
-
 	<script src="/js/jquery-1.11.2.min.js" type="text/javascript"></script>
 	<script src="/js/three/three.min.js" type="text/javascript"></script>
 	<script src="/js/three/Detector.js" type="text/javascript"></script>
@@ -29,8 +23,8 @@
 		style="background-color: yellow; width: 50%; position: absolute; height: 100%; right: 0px; top: 0px;"></div>
 		
 	<div>
-		<video id="video" autoplay loop style="display:none">
-			<source src="/videos/wingsuit.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+		<video id="video" autoplay loop>
+			<source src="http://storage.googleapis.com/streaming-video-360/wingsuit.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
 		</video>
 	</div>
 </body>

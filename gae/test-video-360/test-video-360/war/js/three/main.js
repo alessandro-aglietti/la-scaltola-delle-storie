@@ -1,7 +1,6 @@
 var fullscreen = function(videoID) {
 	createRenderer("spheresx", videoID);
 	createRenderer("spheredx", videoID);
-	SC_WIDGET.play();
 }
 
 var createRenderer = function(divID, videoID) {
