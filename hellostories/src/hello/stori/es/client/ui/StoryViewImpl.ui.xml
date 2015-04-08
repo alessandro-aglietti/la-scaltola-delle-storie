@@ -5,7 +5,7 @@
 	<ui:with field='res'
 		type='hello.stori.es.client.resources.MaterialResources' />
 
-	<g:HTMLPanel ui:field="vrContainer">
-		
-	</g:HTMLPanel>
+	<g:SimpleLayoutPanel height="100%" ui:field="vrContainer">
+
+	</g:SimpleLayoutPanel>
 </ui:UiBinder>

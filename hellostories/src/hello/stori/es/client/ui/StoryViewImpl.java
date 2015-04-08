@@ -7,8 +7,8 @@ import com.google.gwt.core.client.GWT;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.Composite;
-import com.google.gwt.user.client.ui.HTMLPanel;
 import com.google.gwt.user.client.ui.RootLayoutPanel;
+import com.google.gwt.user.client.ui.SimpleLayoutPanel;
 import com.google.gwt.user.client.ui.Widget;
 
 public class StoryViewImpl extends Composite implements StoryView {
@@ -17,7 +17,7 @@ public class StoryViewImpl extends Composite implements StoryView {
     interface StoryViewImplUiBinder extends UiBinder<Widget, StoryViewImpl> {}
 
     @UiField
-    HTMLPanel vrContainer;
+    SimpleLayoutPanel vrContainer;
 
     private Presenter listener;
 
@@ -28,16 +28,20 @@ public class StoryViewImpl extends Composite implements StoryView {
     @Override
     protected void onLoad() {
         // TODO Auto-generated method stub
+//        RootLayoutPanel.get().setHeight("100%");
+        
         RenderingPanel renderingPanel = new RenderingPanel();
         // Background color
         renderingPanel.setBackground(0x111111);
         renderingPanel.setAnimatedScene(new MyScene());
 
-//        this.getParent().ad
+        // this.getParent().ad
+
+        // RootLayoutPanel.get().add(renderingPanel);
+
+        vrContainer.getParent().getParent().setHeight("100%");
         
-        RootLayoutPanel.get().add(renderingPanel);
-        
-//        vrContainer.add(renderingPanel);
+        vrContainer.setWidget(renderingPanel);
 
         // super.onLoad();
     }
