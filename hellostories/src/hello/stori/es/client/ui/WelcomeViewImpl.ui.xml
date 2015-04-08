@@ -1,0 +1,25 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:m="urn:import:gwt.material.design.client.ui">
+	<g:HTMLPanel>
+		<m:MaterialRow>
+			<m:MaterialColumn grid="s12">
+				<span class="flow-text" ui:field="nameSpan" />
+			</m:MaterialColumn>
+		</m:MaterialRow>
+		<m:MaterialRow>
+			<m:MaterialColumn grid="s6">
+				<span class="flow-text">
+					<m:MaterialButton ui:field="toastButton" text="Toast Button"
+						waves="light" color="blue" />
+				</span>
+			</m:MaterialColumn>
+			<m:MaterialColumn grid="s6">
+				<span class="flow-text">
+					6-columns (one-half)
+					<g:Anchor ui:field="goodbyeLink" text="Say good-bye"></g:Anchor>
+				</span>
+			</m:MaterialColumn>
+		</m:MaterialRow>
+	</g:HTMLPanel>
+</ui:UiBinder>
