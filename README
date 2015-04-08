@@ -17,3 +17,7 @@ http://parallax3d.org/
 
 Uncaught SecurityError: Failed to execute 'texImage2D' on 'WebGLRenderingContext': The video element contains cross-origin data, and may not be loaded.
 http://stackoverflow.com/questions/26127462/three-js-uncaught-securityerror-failed-to-execute-teximage2d-on-webglrenderi
+
+
+## parallax
+https://github.com/thothbot/parallax/wiki
