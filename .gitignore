@@ -19,3 +19,9 @@ hellostories/.settings
 hellostories/gwt-unitCache
 *.rpc
 *.nocache.js
+*.cache.js
+*.cache.png
+compilation-mappings.txt
+hellostories.devmode.js
+manifest.txt
+*.symbolMap
