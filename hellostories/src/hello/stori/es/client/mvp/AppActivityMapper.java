@@ -1,7 +1,9 @@
 package hello.stori.es.client.mvp;
 
 import hello.stori.es.client.ClientFactory;
+import hello.stori.es.client.activity.StoryActivity;
 import hello.stori.es.client.activity.WelcomeActivity;
+import hello.stori.es.client.place.StoryPlace;
 import hello.stori.es.client.place.WelcomePlace;
 
 import com.google.gwt.activity.shared.Activity;
@@ -32,8 +34,8 @@ public class AppActivityMapper implements ActivityMapper {
         // This is begging for GIN
         if (place instanceof WelcomePlace)
             return new WelcomeActivity((WelcomePlace) place, clientFactory);
-        // else if (place instanceof GoodbyePlace)
-        // return new GoodbyeActivity((GoodbyePlace) place, clientFactory);
+        else if (place instanceof StoryPlace)
+            return new StoryActivity((StoryPlace) place, clientFactory);
 
         return null;
     }

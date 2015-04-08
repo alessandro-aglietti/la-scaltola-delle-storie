@@ -1,5 +1,7 @@
 package hello.stori.es.client;
 
+import hello.stori.es.client.ui.StoryView;
+import hello.stori.es.client.ui.StoryViewImpl;
 import hello.stori.es.client.ui.WelcomeView;
 import hello.stori.es.client.ui.WelcomeViewImpl;
 
@@ -11,6 +13,7 @@ public class ClientFactoryImpl implements ClientFactory {
     private static final EventBus eventBus = new SimpleEventBus();
     private static final PlaceController placeController = new PlaceController(eventBus);
     private static final WelcomeView welcomeView = new WelcomeViewImpl();
+    private static final StoryView storyView = new StoryViewImpl();
 
     // private static final GoodbyeView goodbyeView = new GoodbyeViewImpl();
 
@@ -22,6 +25,11 @@ public class ClientFactoryImpl implements ClientFactory {
     @Override
     public WelcomeView getWelcomeView() {
         return welcomeView;
+    }
+
+    @Override
+    public StoryView getStoryView() {
+        return storyView;
     }
 
     @Override
