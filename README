@@ -1,0 +1,23 @@
+# la-scaltola-delle-storie
+
+to beat
+http://www.vrideo.com/
+
+http://www.slideshare.net/dodotis/madrid-jugmanolo-carrascogwthtml5
+
+GWT IDEA
+
+Translate the DeviceOrientatioControls.js using
+https://code.google.com/p/gwt-phonegap/wiki/AcceleroMeter
+in a
+http://parallax3d.org/parallax/docs/1.5/thothbot/parallax/core/client/controls/Controls.html
+for
+https://github.com/thothbot/parallax
+http://parallax3d.org/
+
+Uncaught SecurityError: Failed to execute 'texImage2D' on 'WebGLRenderingContext': The video element contains cross-origin data, and may not be loaded.
+http://stackoverflow.com/questions/26127462/three-js-uncaught-securityerror-failed-to-execute-teximage2d-on-webglrenderi
+
+
+## parallax
+https://github.com/thothbot/parallax/wiki

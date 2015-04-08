@@ -1,1 +1,0 @@
-# la-scaltola-delle-storie
