@@ -37,10 +37,10 @@ public class WelcomeActivity extends AbstractActivity implements
 	/**
 	 * Ask user before stopping this activity
 	 */
-	@Override
-	public String mayStop() {
-		return "Please hold on. This activity is stopping.";
-	}
+//	@Override
+//	public String mayStop() {
+//		return "Please hold on. This activity is stopping.";
+//	}
 
 	/**
 	 * Navigate to a new Place in the browser

@@ -1,24 +1,41 @@
 <!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
 	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:m="urn:import:gwt.material.design.client.ui">
+
+	<ui:with field='res'
+		type='hello.stori.es.client.resources.MaterialResources' />
+
 	<g:HTMLPanel>
 		<m:MaterialRow>
-			<m:MaterialColumn grid="s12">
-				<span class="flow-text" ui:field="nameSpan" />
+			<m:MaterialColumn grid="m12">
+				<m:MaterialButton ui:field="newStory" text="Crea la tua storia"
+					waves="light" color="blue" />
 			</m:MaterialColumn>
 		</m:MaterialRow>
 		<m:MaterialRow>
-			<m:MaterialColumn grid="s6">
-				<span class="flow-text">
-					<m:MaterialButton ui:field="toastButton" text="Toast Button"
-						waves="light" color="blue" />
-				</span>
+			<m:MaterialColumn grid="s12 m12">
+				<m:MaterialTextBox placeholder="Cerca una storia"
+					icon="mdi-action-search" />
 			</m:MaterialColumn>
-			<m:MaterialColumn grid="s6">
-				<span class="flow-text">
-					6-columns (one-half)
-					<g:Anchor ui:field="goodbyeLink" text="Say good-bye"></g:Anchor>
-				</span>
+			<m:MaterialColumn grid="m6">
+				<m:MaterialCard type="reveal" title="Volo in tuta alare"
+					description="Lorem Ipsum è un testo segnaposto utilizzato nel settore della tipografia e della stampa. Lorem Ipsum è considerato il testo segnaposto standard sin dal sedicesimo secolo, quando un anonimo tipografo prese una cassetta di caratteri e li assemblò per preparare un testo campione. È sopravvissuto non solo a più di cinque secoli, ma anche al passaggio alla videoimpaginazione, pervenendoci sostanzialmente inalterato."
+					resource="{res.thumbnail_flgel_web}">
+					<m:link>
+						<m:MaterialButton text="Avvia questa storia"
+							waves="light" color="blue" />
+					</m:link>
+				</m:MaterialCard>
+			</m:MaterialColumn>
+			<m:MaterialColumn grid="m6">
+				<m:MaterialCard type="reveal" title="F1 GP"
+					description="Lorem Ipsum è un testo segnaposto utilizzato nel settore della tipografia e della stampa. Lorem Ipsum è considerato il testo segnaposto standard sin dal sedicesimo secolo, quando un anonimo tipografo prese una cassetta di caratteri e li assemblò per preparare un testo campione. È sopravvissuto non solo a più di cinque secoli, ma anche al passaggio alla videoimpaginazione, pervenendoci sostanzialmente inalterato."
+					resource="{res.f1}">
+					<m:link>
+						<m:MaterialButton text="Avvia questa storia"
+							waves="light" color="blue" />
+					</m:link>
+				</m:MaterialCard>
 			</m:MaterialColumn>
 		</m:MaterialRow>
 	</g:HTMLPanel>
