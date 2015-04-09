@@ -37,9 +37,6 @@ public class MyScene extends AnimatedScene {
 
         this.mesh = new Mesh(geometry, material);
         
-//        Vector3 scale = new Vector3(-1, 0, 0);
-//        mesh.setScale(scale);
-        
         getScene().add(mesh);
     }
 
