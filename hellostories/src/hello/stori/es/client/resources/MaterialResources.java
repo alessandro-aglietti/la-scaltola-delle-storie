@@ -10,4 +10,5 @@ public interface MaterialResources extends ClientBundle {
 	ImageResource thumbnail_flgel_web();
 	ImageResource f1();
 	ImageResource ic_gwt_logo();
+	ImageResource photosphere();
 }

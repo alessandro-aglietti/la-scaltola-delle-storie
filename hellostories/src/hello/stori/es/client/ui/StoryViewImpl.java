@@ -7,7 +7,7 @@ import com.google.gwt.core.client.GWT;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.Composite;
-import com.google.gwt.user.client.ui.RootLayoutPanel;
+import com.google.gwt.user.client.ui.HTMLPanel;
 import com.google.gwt.user.client.ui.SimpleLayoutPanel;
 import com.google.gwt.user.client.ui.Widget;
 
@@ -17,7 +17,13 @@ public class StoryViewImpl extends Composite implements StoryView {
     interface StoryViewImplUiBinder extends UiBinder<Widget, StoryViewImpl> {}
 
     @UiField
-    SimpleLayoutPanel vrContainer;
+    SimpleLayoutPanel sphereSX;
+
+    @UiField
+    SimpleLayoutPanel sphereDX;
+
+    @UiField
+    HTMLPanel sParent;
 
     private Presenter listener;
 
@@ -28,22 +34,22 @@ public class StoryViewImpl extends Composite implements StoryView {
     @Override
     protected void onLoad() {
         // TODO Auto-generated method stub
-//        RootLayoutPanel.get().setHeight("100%");
-        
-        RenderingPanel renderingPanel = new RenderingPanel();
-        // Background color
-        renderingPanel.setBackground(0x111111);
-        renderingPanel.setAnimatedScene(new MyScene());
+        // RootLayoutPanel.get().setHeight("100%");
 
-        // this.getParent().ad
+        RenderingPanel renderingPanelSX = new RenderingPanel();
+        renderingPanelSX.setBackground(0x111111);
+        renderingPanelSX.setAnimatedScene(new MyScene());
 
-        // RootLayoutPanel.get().add(renderingPanel);
+        RenderingPanel renderingPanelDX = new RenderingPanel();
+        renderingPanelDX.setBackground(0x111111);
+        renderingPanelDX.setAnimatedScene(new MyScene());
 
-        vrContainer.getParent().getParent().setHeight("100%");
-        
-        vrContainer.setWidget(renderingPanel);
+        sParent.getParent().getParent().setHeight("100%");
 
-        // super.onLoad();
+        sphereSX.setWidget(renderingPanelSX);
+
+        sphereDX.setWidget(renderingPanelDX);
+
     }
 
     @Override
