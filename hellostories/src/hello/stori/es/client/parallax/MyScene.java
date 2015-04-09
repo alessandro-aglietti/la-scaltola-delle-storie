@@ -1,5 +1,6 @@
 package hello.stori.es.client.parallax;
 
+import hello.stori.es.client.resources.MaterialResources;
 import thothbot.parallax.core.client.AnimatedScene;
 import thothbot.parallax.core.client.textures.Texture;
 import thothbot.parallax.core.shared.cameras.PerspectiveCamera;
@@ -38,8 +39,8 @@ public class MyScene extends AnimatedScene {
         MeshBasicMaterial material = new MeshBasicMaterial();
         // material.setColor(new Color(0xFF0000));
         // material.setWireframe(true);
-        // Texture map = new Texture(MaterialResources.INSTANCE.photosphere().getSafeUri().asString());
-        Texture map = new Texture("/photosphere.jpg");
+        Texture map = new Texture(MaterialResources.INSTANCE.photosphere().getSafeUri().asString());
+        // Texture map = new Texture("/photosphere.jpg");
         // Texture map = new Texture("/wingsuite-trimmed.mp4");
 
         material.setMap(map);
@@ -53,9 +54,8 @@ public class MyScene extends AnimatedScene {
         // this.or = new OculusRift(getRenderer(), getScene());
 
         // composer.addPass(pass);
-        
+
         gyro = new GyroControls(camera, getCanvas());
-        
 
     }
 
