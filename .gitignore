@@ -25,3 +25,4 @@ compilation-mappings.txt
 hellostories.devmode.js
 manifest.txt
 *.symbolMap
+*.cache.jpg
