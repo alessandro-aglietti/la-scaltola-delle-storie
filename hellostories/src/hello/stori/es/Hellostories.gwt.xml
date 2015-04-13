@@ -8,6 +8,8 @@
 	<inherits name='com.google.gwt.user.User' />
 	
 	<inherits name="thothbot.parallax.core.Core"/>
+	<inherits name="thothbot.parallax.plugins.effects.Effects"/>
+	
 
 	<!-- Inherit the default GWT style sheet. You can change -->
 	<!-- the theme of your GWT application by uncommenting -->

@@ -34,7 +34,6 @@ public class StoryViewImpl extends Composite implements StoryView {
     @Override
     protected void onLoad() {
         // TODO Auto-generated method stub
-        // RootLayoutPanel.get().setHeight("100%");
 
         RenderingPanel renderingPanelSX = new RenderingPanel();
         renderingPanelSX.setBackground(0x111111);
@@ -56,11 +55,6 @@ public class StoryViewImpl extends Composite implements StoryView {
     public void setName(String name) {
         GWT.log("setName di StoryViewImpl: " + name);
     }
-
-    // @UiHandler("goodbyeLink")
-    // void onClickGoodbye(ClickEvent e) {
-    // listener.goTo(new GoodbyePlace(name));
-    // }
 
     @Override
     public void setPresenter(Presenter listener) {
