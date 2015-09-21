@@ -1,0 +1,4 @@
+Patch GWT PhoneGap 3.5.0.0 for GWT 2.7 as mentioned here
+https://github.com/dankurka/gwtphonegap/issues/46
+1) Download gwtphonegap-3.5.0.0.jar
+2) jar uf gwtphonegap-3.5.0.0-patch46.jar com/googlecode/gwtphonegap/PhoneGap.gwt.xml
