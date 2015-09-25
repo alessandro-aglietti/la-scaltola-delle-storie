@@ -2,8 +2,12 @@ package it.aqquadro.client;
 
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.GWT;
+import com.google.gwt.dom.client.DivElement;
+import com.google.gwt.dom.client.ParagraphElement;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
+import com.google.gwt.user.client.DOM;
+import com.google.gwt.user.client.Element;
 import com.google.gwt.user.client.ui.RootLayoutPanel;
 import com.google.gwt.user.client.ui.Widget;
 
@@ -48,15 +52,43 @@ public class My_first_gwt_gae implements EntryPoint {
 
 	private MyControls controls;
 
+	private DivElement log_div;
+
 	public static native void fullscreen() /*-{
-		$wnd.document.body.webkitRequestFullScreen();
+		var doc = $wnd.document;
+		var docEl = doc.documentElement;
+
+		var requestFullScreen = docEl.requestFullscreen
+				|| docEl.mozRequestFullScreen || docEl.webkitRequestFullScreen
+				|| docEl.msRequestFullscreen;
+		var cancelFullScreen = doc.exitFullscreen || doc.mozCancelFullScreen
+				|| doc.webkitExitFullscreen || doc.msExitFullscreen;
+
+		if (!doc.fullscreenElement && !doc.mozFullScreenElement
+				&& !doc.webkitFullscreenElement && !doc.msFullscreenElement) {
+			requestFullScreen.call(docEl);
+		} else {
+			cancelFullScreen.call(doc);
+		}
 	}-*/;
+
+	private void divLogger(String message) {
+		this.log_div = (DivElement) DOM.getElementById("log").cast();
+
+		ParagraphElement p = ((ParagraphElement) DOM.createElement("p").cast());
+		p.setInnerHTML(message);
+
+		this.log_div.appendChild(p);
+	}
 
 	public void onModuleLoad() {
 		GWT.log("My_first_gwt_gae onModuleLoad");
+		divLogger("My_first_gwt_gae onModuleLoad");
 
 		AccelerationOptions options = new AccelerationOptions();
 		options.setFrequency(50);
+		
+		divLogger("Trying to watch acceleremoter...");
 		accelerometer.watchAcceleration(options, new AccelerationCallback() {
 
 			@Override
@@ -88,14 +120,16 @@ public class My_first_gwt_gae implements EntryPoint {
 
 			@Override
 			public void onFailure() {
-
+				divLogger("Acceleremoter onFailure");
 			}
 		});
 
+		divLogger("Trying to add body click handler to go fullscreen");
 		ClickHandler clickHandler = new ClickHandler() {
 			@Override
 			public void onClick(ClickEvent event) {
 				GWT.log("onClick onModuleLoad");
+				divLogger("onclick handled, trying to go fullscreen");
 				// Window.alert("TextBox/Button clickHandler.");
 				event.stopPropagation(); // The important line - We stop the
 											// event
@@ -103,6 +137,8 @@ public class My_first_gwt_gae implements EntryPoint {
 											// FocusPanel
 											// doesn't get the event
 				fullscreen();
+				
+				divLogger("Trying to render webgl canvas...");
 
 				RenderingPanel renderingPanel = new RenderingPanel();
 				renderingPanel.setBackground(0x111111);
@@ -166,7 +202,8 @@ public class My_first_gwt_gae implements EntryPoint {
 
 			My_first_gwt_gae.this.stereo = new Stereo(getRenderer(), getScene());
 
-//			My_first_gwt_gae.this.oculus = new OculusRift(getRenderer(), getScene());
+			// My_first_gwt_gae.this.oculus = new OculusRift(getRenderer(),
+			// getScene());
 		}
 
 		@Override
@@ -181,7 +218,7 @@ public class My_first_gwt_gae implements EntryPoint {
 		}
 	}
 
-	class MyControls extends Controls	 {
+	class MyControls extends Controls {
 
 		private double beta = 0; // Y
 		private double alpha = 1.5; // X
